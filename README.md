@@ -1,28 +1,34 @@
-# Progressive Enhancement Opdracht
+# Progressive Enhancement Opdracht: Een Toegankelijke Enquête
 
-"Instead of thinking about the specifics of how a finished website might look, progressive enhancement encourages you to think about the fundamental meaning of a website." - Jeremy Keith
+In een wereld waarin websites steeds complexer worden en technologieën zich razendsnel ontwikkelen, biedt progressive enhancement een manier om te zorgen voor toegankelijkheid voor iedereen, ongeacht hun browser of context. In dit verhaal volgen we een ontwerper die de principes van progressive enhancement toepast op een opdracht om een interactieve en toegankelijke enquête te maken.
 
-Het doel van deze opdracht is om een interactieve toepassing te ontwerpen met behulp van progressive enhancement. Progressive enhancement is een ontwerpprincipe dat de toegankelijkheid van een website voor alle gebruikers, browsers en contexten garandeert, door de core functionaliteiten in iedere laag van de toepassing te waarborgen.
+## Use-Case: Enquête met Formulier Validatie
 
-## Opdracht
+De ontwerper begint met het uitkiezen van een uitdagende use-case:
 
-Kies één van de volgende opdrachten en maak een demo op basis van de use case in drie lagen volgens het principe van progressive enhancement. Houd er rekening mee dat je geen npm packages en polyfills mag gebruiken.
+- Het maken van een enquête met verplichte velden voor studentgegevens, een beoordeling van de lesstof en docenten.
+- Een formulier validatie die ervoor zorgt dat het formulier volledig en correct wordt ingevuld.
+- De enquête moet ook een gebruiksvriendelijke interface hebben, met een duidelijke indicatie van de voortgang en de mogelijkheid om vragen over te slaan of terug te keren naar eerdere vragen.
 
-1. Formulier validatie: Geef de gebruiker een duidelijke indicatie van waar hij/zij zich bevindt tijdens het invullen van een enquête.
-2. T-shirt ontwerpen: De gebruiker moet een eigen t-shirt kunnen ontwerpen, opslaan, bestellen en bij het volgende bezoek kunnen gebruiken.
-3. Online poll: Maak een online poll (server-side intensief).
-4. Fotocarousel: Bekijk een serie vakantiefoto's die in een carousel worden weergegeven.
-5. Routebeschrijving: Toon stap voor stap een routebeschrijving van je huis naar een openbare boekenkast.
+## Ontwerpproces
 
-## Werkwijze
+1. Kies een use-case en onderzoek de browser-technologieën die je kunt toepassen.
+2. Schets een wireflow van hoe de demo eruit moet zien en werken.
+3. Bepaal de functional/reliable, usable en pleasurable lagen en ga op zoek naar semantische HTML-elementen die geschikt zijn voor de functional/reliable laag.
 
-1. Kies een use-case en bedenk welke browser-technologieën je kunt toepassen.
-2. Schets een wireflow van hoe de demo moet werken en hoe het eruit moet zien.
-3. Bepaal de functional/reliable, usable en pleasurable laag.
-    a. Onderzoek de functional/reliable laag naar semantische HTML-elementen.
+## Afwerking en Testen
 
-Bij de eindopdracht mag je simuleren wat de server moet teruggeven als data (maak wel een klik-verder-knop).
+Om de opdracht af te ronden:
 
-Kies één obscure browser zoals Lynx, FLow, PrinceXML, Opera Mini of KaiOS. Voor KaiOS heb je een apparaat nodig. De overige browsers moet je installeren.
+- Simuleer wat de server moet teruggeven als data.
+- Kies een obscure browser om de enquête in te testen.
+- Zorg ervoor dat de gekozen browser de enquête zo goed mogelijk kan verwerken en verdedig je keuze.
 
-Je moet kunnen verdedigen dat de manier waarop je eindopdracht werkt in de gekozen browser, ook de beste manier is waarop het KAN werken. Bijvoorbeeld: "Lynx ondersteunt geen JavaScript, maar mijn site werkt zo goed mogelijk zonder JavaScript."
+## Extra Uitdagingen
+
+De ontwerper maakt de enquête nog interessanter door het toevoegen van:
+
+- Light en dark mode opties.
+- Gebruik van session storage om de gebruikerservaring te verbeteren.
+
+Door de principes van progressive enhancement toe te passen, slaagt de ontwerper erin om een interactieve, gebruiksvriendelijke en toegankelijke enquête te creëren die in elke browser en context kan werken. Deze benadering helpt hem om de fundamentele betekenis van een website te begrijpen en een solide basis te leggen voor het ontwerp en de ontwikkeling van toekomstige projecten.
