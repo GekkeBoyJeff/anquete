@@ -1,0 +1,122 @@
+<%- include('partials/header') %>
+
+<main>
+
+<form method="post" action="/form">
+    <fieldset id="VerplichteStudentgegevens">
+        <legend>Wie ben jij?</legend>
+        <div></div>
+        <div>
+          <h1>🌐 Welkom bij de Web Development Wonderland Enquête! 🌐</h1>
+          <p>🎢 Stap in onze virtuele rollercoaster en deel je ervaringen over de minor Web Development met ons!</p>
+          <p>Pak je toetsenbord, surf op het web van herinneringen en laat je creativiteit de vrije loop. Maar onthoud: veiligheid eerst! Zorg ervoor dat je je studentgegevens correct invoert.</p> 
+  
+          <a href="#VerplichteStudentgegevens" aria-label="Laat de verplichte studenten gegevens zien"><h2>🔒 Verplichte studentgegevens:</h2></a>
+          <ul>
+              <li>
+                  <label for="name">Naam (zodat we weten wie de HTML-held is!):</label>
+                  <input type="text" name="name" id="name" placeholder="Pietje Puk" required>
+              </li>
+              <li>
+                  <label for="studentNumber">Studentennummer (je toegangscode tot de digitale wereld):</label>
+                  <input type="number" name="studentNumber" id="studentNumber" placeholder="500801234"  min="300241583" max="999999999" required>
+              </li>
+              <li>
+                  <label for="email">Studenten e-mail (je virtuele postduif):</label>
+                  <input type="email" name="email" id="email" placeholder="naam.achternaam@school.nl"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+              </li>
+          </ul>
+  
+          <h2>📚 Voor elk vak, vul de volgende informatie in:</h2> 
+          <ul>
+              <li>
+                  <p>Naam van het vak (zoals "JavaScript voor Dummies")</p>
+              </li>
+              <li>
+                  <p>Naam van de docent(en) (de mensen die je door de code-jungle hebben geleid)</p>
+              </li>
+              <li>
+                  <p>Weken waarin je het vak deed (bv: week 1-7)</p>
+              </li>
+              </ul>
+              <h3>Beoordeling op schaal 1-10</h3>
+              <ul>
+              <li>
+                  <p> Lesstof (1 = "Ik kan dit met mijn ogen dicht", 10 = "Ik heb hulp nodig van een magische code-fee!")</p>
+              </li>
+              <li>
+                  <p>Uitleg (1 = "Duidelijk als glasvezel", 10 = "Ik heb een ontcijferaar nodig")</p>
+              </li>
+              <li>
+                  <p>Eigen inzicht (1 = "Ik ben de koning(in) van coderen!", 10 = "Stuur me een reddingsboei!")</p>
+              </li>
+          </ul>
+          <a href="#wafs">Begin met de anquete</a>
+        </div>
+    </fieldset>
+<!-- Web App from Scratch -->
+<fieldset id="wafs">
+    <legend>Web App from Scratch</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Progressive Web Apps -->
+  <fieldset>
+    <legend>Progressive Web Apps</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Real-Time Web -->
+  <fieldset>
+    <legend>Real-Time Web</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- CSS to the Rescue -->
+  <fieldset>
+    <legend>CSS to the Rescue</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Browser Technologies -->
+  <fieldset>
+    <legend>Browser Technologies</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- User-Centered Design -->
+  <fieldset>
+    <legend>User-Centered Design</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Project 1 - Prototype for concept -->
+  <fieldset>
+    <legend>Project 1 - Prototype for concept</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Project 2 - Solve, debug & optimize -->
+  <fieldset>
+    <legend>Project 2 - Solve, debug & optimize</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Project 3 - Design for Real-Time -->
+  <fieldset>
+    <legend>Project 3 - Design for Real-Time</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+  
+  <!-- Meesterproef - Case voor een opdrachtgever -->
+  <fieldset>
+    <legend>Meesterproef - Case voor een opdrachtgever</legend>
+    <!-- Inhoud hier -->
+  </fieldset>
+    <input type="submit">
+</form>
+
+
+</main>
+
+<%- include('partials/footer') %>

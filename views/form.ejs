@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<main>
+    <h1>resultatenpagina</h1>
+    <p>Server Data:</p>
+    <ul>
+      <% Object.keys(resData.serverData).forEach(function(key) { %>
+        <li><%= key + ': ' + resData.serverData[key] %></li>
+      <% }); %>
+    </ul>
+</main>
+<%- include('partials/footer') %>

@@ -1,0 +1,22 @@
+{
+  "name": "anquete",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Het doel van deze opdracht is om een interactieve toepassing te ontwerpen met behulp van progressive enhancement. Progressive enhancement is een ontwerpprincipe dat de toegankelijkheid van een website voor alle gebruikers, browsers en contexten garandeert, door de core functionaliteiten in iedere laag van de toepassing te waarborgen.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "anquete"
+  },
+  "author": "Jeffrey Ullers",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}

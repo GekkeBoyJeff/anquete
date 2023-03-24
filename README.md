@@ -26,3 +26,21 @@ Bij de eindopdracht mag je simuleren wat de server moet teruggeven als data (maa
 Kies één obscure browser zoals Lynx, FLow, PrinceXML, Opera Mini of KaiOS. Voor KaiOS heb je een apparaat nodig. De overige browsers moet je installeren.
 
 Je moet kunnen verdedigen dat de manier waarop je eindopdracht werkt in de gekozen browser, ook de beste manier is waarop het KAN werken. Bijvoorbeeld: "Lynx ondersteunt geen JavaScript, maar mijn site werkt zo goed mogelijk zonder JavaScript."
+
+
+Anquete:
+- Studentgegevens (naam + nummer + email) - verplicht!
+- Per vak
+	- Naam vak
+	- docenten
+	- week waarin je het vak deed
+	- beoordeling op schaal 1-1 van lesstof hoe moeilijk het is
+	- lesstof (hoe moeilijk het is)
+	- uitleg (hoe duidelijk het uitgelegd is)
+	- eigen inzicht
+- Formulier validatie: zorg ervoor dat het formulier compleet word ingevuld. Geef duidelijke fout meldingen. Bedenk zelf wanneer en hoe de validatie zal plaatsvinden. (Hoe communiceer je het op een vriendelijke manier naar een gebruiker)
+- Als ik de anquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven (session storage?)
+- Duidelijke interface waarmee gebruiker terug kan naar de vorige vragen (En misschien ook om een vraag over te slaan?)
+- Duidelijke interface die aangeeft waar je bent in het formulier
+- Je mag geen zichtbare radio buttons gebruiken
+- Het formulier moet een light en dark mode hebben.
