@@ -2,121 +2,118 @@
 
 <main>
 
-<form method="post" action="/form">
-    <fieldset id="VerplichteStudentgegevens">
-        <legend>Wie ben jij?</legend>
-        <div></div>
-        <div>
-          <h1>🌐 Welkom bij de Web Development Wonderland Enquête! 🌐</h1>
-          <p>🎢 Stap in onze virtuele rollercoaster en deel je ervaringen over de minor Web Development met ons!</p>
-          <p>Pak je toetsenbord, surf op het web van herinneringen en laat je creativiteit de vrije loop. Maar onthoud: veiligheid eerst! Zorg ervoor dat je je studentgegevens correct invoert.</p> 
-  
-          <a href="#VerplichteStudentgegevens" aria-label="Laat de verplichte studenten gegevens zien"><h2>🔒 Verplichte studentgegevens:</h2></a>
-          <ul>
-              <li>
-                  <label for="name">Naam (zodat we weten wie de HTML-held is!):</label>
-                  <input type="text" name="name" id="name" placeholder="Pietje Puk" required>
-              </li>
-              <li>
-                  <label for="studentNumber">Studentennummer (je toegangscode tot de digitale wereld):</label>
-                  <input type="number" name="studentNumber" id="studentNumber" placeholder="500801234"  min="300241583" max="999999999" required>
-              </li>
-              <li>
-                  <label for="email">Studenten e-mail (je virtuele postduif):</label>
-                  <input type="email" name="email" id="email" placeholder="naam.achternaam@school.nl"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
-              </li>
-          </ul>
-  
-          <h2>📚 Voor elk vak, vul de volgende informatie in:</h2> 
-          <ul>
-              <li>
-                  <p>Naam van het vak (zoals "JavaScript voor Dummies")</p>
-              </li>
-              <li>
-                  <p>Naam van de docent(en) (de mensen die je door de code-jungle hebben geleid)</p>
-              </li>
-              <li>
-                  <p>Weken waarin je het vak deed (bv: week 1-7)</p>
-              </li>
-              </ul>
-              <h3>Beoordeling op schaal 1-10</h3>
-              <ul>
-              <li>
-                  <p> Lesstof (1 = "Ik kan dit met mijn ogen dicht", 10 = "Ik heb hulp nodig van een magische code-fee!")</p>
-              </li>
-              <li>
-                  <p>Uitleg (1 = "Duidelijk als glasvezel", 10 = "Ik heb een ontcijferaar nodig")</p>
-              </li>
-              <li>
-                  <p>Eigen inzicht (1 = "Ik ben de koning(in) van coderen!", 10 = "Stuur me een reddingsboei!")</p>
-              </li>
-          </ul>
-          <a href="#wafs">Begin met de anquete</a>
-        </div>
+<form id="form" method="post" action="/form">
+  <fieldset id="VerplichteStudentgegevens">
+    <legend>Wie ben jij?</legend>
+      <h1>🌐 Welkom bij de Web Development Wonderland Enquête! 🌐</h1>
+      <a href="#VerplichteStudentgegevens" aria-label="Laat de verplichte studenten gegevens zien"><h2>🔒 Verplichte studentgegevens:</h2></a>
+      <div>
+        <h2>We hebben veel al voor je ingevuld 😉</h2> 
+        <ul>
+            <li>
+                <p>Naam van het vak <span>zoals "JavaScript voor Dummies"</span></p>
+            </li>
+            <li>
+                <p>Naam van de docent(en) <span>de mensen die je door de code-jungle hebben geleid</span></p>
+            </li>
+            <li>
+                <p>Weken waarin je het vak deed <span>bv: week 1-3</span></p>
+            </li>
+            </ul>
+      </div>
+      <div>
+        <h3>De beoordeling ook op schaal 1 tot 10(natuurlijk)</h3>
+        <ul>
+        <li>
+            <p> Lesstof <span>1 = "Ik kan dit met mijn ogen dicht", 10 = "Ik heb hulp nodig van een magische code-fee!"</span></p>
+        </li>
+        <li>
+            <p>Uitleg <span>1 = "Duidelijk als glasvezel", 10 = "Ik heb een ontcijferaar nodig"</span></p>
+        </li>
+        <li>
+            <p>Eigen inzicht <span>1 = "Ik ben de koning(in) van coderen!", 10 = "Stuur me een reddingsboei!"</span></p>
+        </li>
+    </ul>
+      </div>
+      <ul>
+          <li>
+              <label for="name">Naam (zodat we weten wie de HTML-held is!):</label>
+              <input type="text" name="name" id="name" placeholder="Pietje Puk" pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}" required aria-label="Naam">
+              <span aria-hidden="true"></span>
+            </li>
+          <li>
+              <label for="studentNumber">Studentennummer (je toegangscode tot de digitale wereld):</label>
+              <input type="number" input-type="decimal" name="studentNumber" id="studentNumber" min="500000000" max="699999999" placeholder="500801234" pattern="^[5-6][0-9]{8}$" required aria-label="Studentennummer">
+              <span aria-hidden="true"></span>
+              <!-- ^ matches the beginning of the input string.
+              500 matches the literal characters "500".
+              \d matches any digit character.
+              {6} specifies that the previous pattern (\d) should be repeated exactly 6 times, matching a total of 6 digits.
+              $ matches the end of the input string. -->
+            </li>
+          <li>
+              <label for="email">Studenten e-mail (je virtuele postduif):</label>
+              <input type="email" name="email" id="email" placeholder="naam.achternaam@hva.nl" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              title="Please Enter Valid Email Id" required aria-label="email">
+              <span aria-hidden="true"></span>
+          </li>
+      </ul>         
+      <a href="#project1">Vul het formulier aan</a> 
+</fieldset>
+<% courses.forEach(element => { %>
+    <fieldset id="<%= element.id %>">
+      <legend>
+          <h2><%= element.courseName %></h2>
+      </legend>
+      <ul>
+        <li>
+          <label for="courseName"><span>Naam van het vak:</span>
+          <input type="text" name="courseName" value="<%= element.courseName %>" required aria-label="naam van het vak"></label>
+          <span aria-hidden="true"></span>
+        </li>
+        <li>
+          <label for="teacherName"><span>Naam van de docent(en):</span>
+          <input type="text" name="teacherName" value="<%= element.teacherName %>" required aria-label="Naam van de leraar"></label>
+          <span aria-hidden="true"></span>
+        </li>
+        <li>
+          <label for="courseWeeks"><span>Weken waarin je het vak deed:</span>
+          <input type="text" name="courseWeeks" value="<%= element.courseWeeks %>" required></label aria-label="weeknummer">
+          <span aria-hidden="true"></span>
+        </li>
+        <li>
+          <label for="lessonDifficulty"><span>Lesstof:</span>
+          <input type="range" list="ticks" name="lessonDifficulty" min="1" max="10" required></label aria-label="Hoe lastig is de stof op een schaal van 1 tot 10">
+          <span aria-hidden="true"></span>
+        </li>
+        <li>
+          <label for="explanationClarity"><span>Uitleg:</span>
+          <input type="range" list="ticks" name="explanationClarity" min="1" max="10" required aria-label="Hoe goed was de uitleg op een schaal van 1 tot 10"></label>
+          <span aria-hidden="true"></span>
+        </li>
+        <li>
+          <label for="personalUnderstanding"><span>Eigen inzicht:</span>
+          <input type="range" list="ticks" name="personalUnderstanding" min="1" max="10" required aria-label="Hoe goed kon je het begrijpen op een schaal van 1 tot 10"></label>
+          <span aria-hidden="true"></span>
+        </li>
+      </ul>
     </fieldset>
-<!-- Web App from Scratch -->
-<fieldset id="wafs">
-    <legend>Web App from Scratch</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Progressive Web Apps -->
-  <fieldset>
-    <legend>Progressive Web Apps</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Real-Time Web -->
-  <fieldset>
-    <legend>Real-Time Web</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- CSS to the Rescue -->
-  <fieldset>
-    <legend>CSS to the Rescue</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Browser Technologies -->
-  <fieldset>
-    <legend>Browser Technologies</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- User-Centered Design -->
-  <fieldset>
-    <legend>User-Centered Design</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Project 1 - Prototype for concept -->
-  <fieldset>
-    <legend>Project 1 - Prototype for concept</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Project 2 - Solve, debug & optimize -->
-  <fieldset>
-    <legend>Project 2 - Solve, debug & optimize</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Project 3 - Design for Real-Time -->
-  <fieldset>
-    <legend>Project 3 - Design for Real-Time</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-  
-  <!-- Meesterproef - Case voor een opdrachtgever -->
-  <fieldset>
-    <legend>Meesterproef - Case voor een opdrachtgever</legend>
-    <!-- Inhoud hier -->
-  </fieldset>
-    <input type="submit">
+<% }) %>
+<datalist id="ticks">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</datalist>
+    
 </form>
 
-
+<div><input type="submit" form="form"></div>
 </main>
-
 <%- include('partials/footer') %>

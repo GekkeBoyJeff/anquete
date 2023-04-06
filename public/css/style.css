@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
-    --background-color: #030935;
+    --background-color: #222222;
     --background-color-lighter: #1c266c;
     --header-color: #3639c1;
     --white-color: #e1e1e1;
@@ -7,45 +9,49 @@
 }
 
 * {
-    font-family: system-ui, sans-serif;
+    font-family: 'Open Sans', system-ui, sans-serif;
     margin: 0px;
     padding: 0px;
     list-style: none;
     color: var(--white-color);
     text-decoration: none;
+    transition: .5s;
 }
 
 html {}
 
 main {
-    height: 100vh;
-    display: grid;
-    margin: 1em 1em 2em;
-    place-content: center;
+    display: flex;
+    padding: 1em;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 form {
-    height: 98vh;
-    width: 96vw;
+    height: 92vh;
+    overflow-x: scroll;
     display: flex;
-    flex-flow: row wrap;
-    gap: 1em;
-    align-content: flex-start;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* max-width: 98vw; */
 }
 
 fieldset {
     border-radius: 0.3em;
     padding: 1em;
-    position: relative;
-    overflow: hidden;
-    overflow-wrap: break-word;
     border: none;
-    flex: 1 1 25%;
     background: var(--card-color);
-    display: flex;
-    text-align: center;
     transition: .5s;
-    height: 8em;
+    margin: .5em;
+    scroll-snap-align: start;
+    min-width: fit-content;
+    min-width: -moz-fit-content;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    /* display: flex; */
+    flex: 0 0 92vw;
 }
 
 fieldset::before {
@@ -60,53 +66,8 @@ fieldset header {
     margin: 0px 0px 1em;
 }
 
-fieldset>div:last-of-type> :not(a:first-of-type) {
+h1 {
     display: none;
-}
-
-fieldset:target>div:last-of-type> :not(a:first-of-type) {
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-}
-
-main form fieldset:target {
-    flex: 1 1 100%;
-    min-height: 91vh;
-    scroll-margin-top: 100vh;
-    text-align: left;
-    order: -1;
-    filter: unset;
-    height: 93vh;
-}
-
-fieldset:has(div:nth-of-type(2) ul li input:not(:placeholder-shown)) {
-    border: 1px solid green;
-}
-
-form:has(:not(fieldset:focus)) fieldset:has(div:nth-of-type(2) ul li input:placeholder-shown) {
-    border: 1px solid red;
-    padding-top: 1em;
-}
-
-fieldset:has(div:nth-of-type(2) ul li input:not(:placeholder-shown))::after {
-    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdodD0iNDgiCnZpZXdCb3g9IjAgMCA0OCA0OCI+CjxwYXRoIGZpbGw9IiNjOGU2YzkiIGQ9Ik00NCwyNGMwLDExLTksMjAtMjAsMjBTNCwzNSw0LDI0UzEzLDQsMjQsNFM0NCwxMyw0NCwyNHoiPjwvcGF0aD48cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNGNhZjUwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iNCIgcG9pbnRzPSIxNCwyNCAyMSwzMSAzNiwxNiI+PC9wb2x5bGluZT4KPC9zdmc+);
-    position: absolute;
-    bottom: .5em;
-    right: 1em;
-}
-
-fieldset::after:hover {
-    display: none;
-}
-
-fieldset:target~fieldset {
-    filter: brightness(0.7);
-}
-
-fieldset:first-of-type~fieldset {
-    filter: opacity(0.7);
-    pointer-events: none;
 }
 
 legend {
@@ -115,68 +76,293 @@ legend {
     transform: scale(1e-06);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --white-color: #e1e1e1;
-        --card-color: #dadada;
-        --header-color: #3639c1;
-        --background-color: #e3e3f9;
-        --white-color: #272727;
-    }
-
-    html {
-        background: var(--background-color);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--header-color);
-    }
-}
-
 li {
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 li input {
     height: 3em;
-    margin: 0px 0px 1.5em;
+    margin: 0px 0px 1em;
     padding-left: 0.5em;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --header-color: #3639c1;
-        --background-color: #e3e3f9;
-        --white-color: #272727;
-    }
-
-    html {
-        background: var(--background-color);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--header-color);
-    }
-}
-
-@media (max-width: 768px) {
-    main form fieldset:target {
-        height: 125%;
-    }
+    border-radius: .3em;
+    border: none;
 }
 
 input[type="submit"] {
     flex: 1 1 100%;
     height: 4em;
+    margin: .5em;
+    border-radius: .3em;
+    cursor: pointer;
+    background: var(--header-color);
+    border: none;
+    flex: 0 1 10em;
+    color: white;
+    font-weight: 700;
+}
+
+input:indeterminate {
+    background: yellow;
+}
+
+fieldset:target {}
+
+main>div {
+    flex: 1 1 18em;
+    align-self: flex-end;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    position: absolute;
+    bottom: .5em;
+    right: .5em;
+}
+
+li>label {
+    margin: .3em 0;
+    background: var(--background-color);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+li input:focus-visible {
+    outline-style: ridge;
+    outline-width: .1em;
+    outline-color: var(--header-color);
+    outline-offset: -.1em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --white-color: #e1e1e1;
+        --card-color: #fff;
+        --header-color: #3639c1;
+        --background-color: #e3e3f9;
+        --white-color: #272727;
+    }
+
+    html {
+        background: var(--background-color);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--header-color);
+    }
+}
+
+/*  */
+
+input+ ::after {
+    position: absolute;
+    top: 2.5em;
+    right: .5em;
+    filter: opacity(.5);
+}
+
+input:invalid+ ::after {
+    content: '❌';
+}
+
+input:valid+ ::after {
+    content: '✅';
+}
+
+input:focus {
+    font-size: 1.2em;
+}
+
+input[placeholder]+span::after {
+    transform: translate(4em, 0.5em);
+}
+
+li span::after {
+    transform: translate(0);
+    transition: .5s;
+}
+
+input[placeholder]:focus+span::after {
+    transform: translate(0, 2.5em);
+}
+
+span::before {
+    content: '';
+    color: red;
+    top: -1em;
+    position: relative;
+    font-size: .8em;
+    left: 1em;
+}
+
+input:invalid+ ::before {
+    content: '';
+}
+
+fieldset#VerplichteStudentgegevens>div {
+    background: var(--background-color);
+    /* margin: 1em 0; */
+    padding: 1em;
+    border-radius: .5em .5em 0 0;
+}
+
+fieldset#VerplichteStudentgegevens>div ul {
+    display: flex;
+    margin: 1em 0 0 0;
+    flex-wrap: wrap;
+    gap: 1em;
+    /* padding: 1em; */
+}
+
+fieldset#VerplichteStudentgegevens>div ul li {
+    background: var(--card-color);
+    padding: 1em;
+    border-radius: .5em;
+    flex: 1 1 10em;
+}
+
+fieldset#VerplichteStudentgegevens>div:last-of-type {
+    border-radius: 0 0 .5em .5em;
+    margin-bottom: .5em;
+}
+
+fieldset#VerplichteStudentgegevens>div ul li p span {
+    display: block;
+    font-size: .8em;
+    filter: opacity(0.7);
+}
+
+fieldset#VerplichteStudentgegevens>div ul li p {
+    font-weight: 500;
+}
+
+fieldset#VerplichteStudentgegevens>div:first-of-type {
+    margin-top: .5em;
+}
+
+fieldset::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+fieldset#VerplichteStudentgegevens>ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    background: var(--background-color);
+    padding: 1em;
+    border-radius: .5em;
+}
+
+fieldset#VerplichteStudentgegevens>ul li:first-of-type,
+fieldset#VerplichteStudentgegevens>ul li:nth-of-type(2) {
+    flex: 1 1 15em;
+    justify-content: flex-end;
+}
+
+fieldset#VerplichteStudentgegevens>ul li:last-of-type {
+    flex: 1 0 100%;
+}
+
+fieldset>a:last-of-type {
+    background: var(--background-color-lighter);
+    padding: 1em;
+    display: flex;
+    place-content: center;
+    margin-top: 1em;
+    border-radius: .5em;
+    font-weight: 700;
+    color: #fff;
+}
+
+fieldset>a:last-of-type:hover {
+    /* font-size: 1.2em; */
+    text-decoration: underline;
+    letter-spacing: .2em;
+}
+
+fieldset#VerplichteStudentgegevens:hover p,
+fieldset#VerplichteStudentgegevens:hover h1,
+fieldset#VerplichteStudentgegevens:hover h2,
+fieldset#VerplichteStudentgegevens:hover div {
+    filter: opacity(0.5);
+}
+
+.status-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: blue;
+    transition: width 0.2s ease-in-out;
+    width: 0;
+    z-index: 9999;
+}
+
+input[type="text"] {}
+
+input[type="range"] {
+    flex: 1 1 20em;
+}
+
+li>label span {
+    display: flex;
+    margin-bottom: 1em;
+    flex: 1 1 5em;
+}
+
+input[type="submit"]:hover {
+    filter: hue-rotate(45deg);
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+main:has(input[type="submit"]:hover) form {
+    filter: blur(.2em);
+}
+
+main:has(input[type="submit"]:hover)::before {
+    content: '';
+    background: rgb(0 0 0 / .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+h2 {
+    position: absolute;
+    transform: scale(0.0001);
+    left: -999999em;
+}
+
+@media (max-width:700px) {
+    fieldset {
+        flex: 0 0 91%;
+    }
 }

@@ -3,8 +3,17 @@
     <h1>resultatenpagina</h1>
     <p>Server Data:</p>
     <ul>
-      <% Object.keys(resData.serverData).forEach(function(key) { %>
-        <li><%= key + ': ' + resData.serverData[key] %></li>
+      <% resData.serverData.courseName.forEach(function(course, index) { %>
+        <li>
+          <strong><%= course %></strong>
+          <ul>
+            <li>Docenten: <%= resData.serverData.teacherName[index] %></li>
+            <li>Weken: <%= resData.serverData.courseWeeks[index] %></li>
+            <li>Moeilijkheidsgraad: <%= resData.serverData.lessonDifficulty[index] %></li>
+            <li>Duidelijkheid uitleg: <%= resData.serverData.explanationClarity[index] %></li>
+            <li>Persoonlijk begrip: <%= resData.serverData.personalUnderstanding[index] %></li>
+          </ul>
+        </li>
       <% }); %>
     </ul>
 </main>
